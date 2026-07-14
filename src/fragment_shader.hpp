@@ -13,7 +13,7 @@ public:
     fragment_shader(fragment_shader&& other);
     fragment_shader& operator=(fragment_shader&& other);
     ~fragment_shader();
-    static std::expected<fragment_shader, std::string> construct(std::string code);
+    static std::expected<fragment_shader, std::string> from_code(std::string code);
     unsigned int get_id() const;
 };
 

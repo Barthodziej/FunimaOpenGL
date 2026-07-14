@@ -13,7 +13,7 @@ public:
     vertex_shader(vertex_shader&& other);
     vertex_shader& operator=(vertex_shader&& other);
     ~vertex_shader();
-    static std::expected<vertex_shader, std::string> construct(std::string code);
+    static std::expected<vertex_shader, std::string> from_code(std::string code);
     unsigned int get_id() const;
 };
 

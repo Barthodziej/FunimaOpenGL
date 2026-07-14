@@ -24,7 +24,7 @@ fragment_shader::~fragment_shader() {
     glDeleteShader(id);
 }
 
-std::expected<fragment_shader, std::string> fragment_shader::construct(std::string code) {
+std::expected<fragment_shader, std::string> fragment_shader::from_code(std::string code) {
     auto compilation_result = compile_shader(code, GL_FRAGMENT_SHADER);
     if (!compilation_result) {
         return std::unexpected(compilation_result.error());

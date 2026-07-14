@@ -16,7 +16,7 @@ public:
     shader_program(shader_program&& other);
     shader_program& operator=(shader_program&& other);
     ~shader_program();
-    static std::expected<shader_program, std::string> construct(const vertex_shader& v_shader, const fragment_shader& f_shader);
+    static std::expected<shader_program, std::string> from_shaders(const vertex_shader& v_shader, const fragment_shader& f_shader);
     unsigned int get_id() const;
 };
 

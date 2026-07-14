@@ -24,7 +24,7 @@ vertex_shader::~vertex_shader() {
     glDeleteShader(id);
 }
 
-std::expected<vertex_shader, std::string> vertex_shader::construct(std::string code) {
+std::expected<vertex_shader, std::string> vertex_shader::from_code(std::string code) {
     auto compilation_result = compile_shader(code, GL_VERTEX_SHADER);
     if (!compilation_result) {
         return std::unexpected(compilation_result.error());
